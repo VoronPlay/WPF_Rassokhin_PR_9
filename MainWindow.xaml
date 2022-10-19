@@ -7,10 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <WrapPanel>
-            <Label x:Name="Dany" Content="ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
-            <Label x:Name="Itog" Content="0" Height="30" Width="100"/>
-            <Button x:Name="Scher" Content="Счет" Click="Schet_Click" Width="150" Height="50"/>
-        </WrapPanel>
+        <ListBox Grid.Row="0" Name="phonesList">
+            <TextBlock FontWeight="Bold" TextDecorations="Underline" Text="Много нового текста"/>
+            <ListBoxItem Background="LightGray">Мама мыла раму</ListBoxItem>
+            <ListBoxItem>КГБ ПОУ АПТ</ListBoxItem>
+            <ListBoxItem Background="LightGray">Здесь моя фамилия</ListBoxItem>
+            <ListBoxItem>Номер практической работы 9</ListBoxItem>
+            <ListBoxItem Background="LightGray">И ещё много букв</ListBoxItem>
+        </ListBox>
+        <TextBlock x:Name="TextBlock" Text=" " Width="200" Height="40" VerticalAlignment="Top" Margin="0,149,600,0"/>
+        <Button x:Name="Button" Content="Пуск" Grid.Row="1" Height="30" Click="Button_Click"/>
+        <TextBlock x:Name="Schet" Grid.Row="1" Text="Количество символов" Width="200" Height="50" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

@@ -25,11 +25,32 @@ namespace WPF_Rassokhin_PR_9
             InitializeComponent();
         }
 
-        private void Schet_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string a = Convert.ToString(Dany.Content);
-            int index = a.IndexOf("OP"); // Результат: 14 (счёт с 0)
-            Itog.Content = Convert.ToString(index); // Результат: DEFGH
+            ListBoxItem lbi = (ListBoxItem)(phonesList.ItemContainerGenerator.ContainerFromIndex(1));
+
+            int len;
+            string text;
+
+            if (phonesList.SelectedItem != null)
+            {
+                ListBoxItem li = (ListBoxItem)phonesList.Items[phonesList.SelectedIndex];
+                text = (string)li.Content;
+                len = text.Length;
+
+                int count = 0;
+
+                int i = 0;
+
+                while(i < len - 1)
+                {
+                    if (text[i] == ' ')
+                        count++;
+                    i++;
+                }
+                Schet.Text = Convert.ToString(count);
+            }
+            TextBlock.Text=lbi.Content.ToString();
         }
     }
 }
